@@ -6,8 +6,7 @@ git clone https://github.com/imnathanzero/local_manifests_zzz -b crot .repo/loca
 
 # Sync the repositories
 echo "Sync begin"
-/opt/crave/resync.sh  && repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+/opt/crave/resync.sh
 
 echo 'Setup Environment begins'
 . build/envsetup.sh
