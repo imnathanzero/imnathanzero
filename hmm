@@ -15,6 +15,8 @@ echo "BUILD STARTS NOW !!!"
 lunch lineage_RMX1941-userdebug
 mka bacon" >> build
 
+chmod a+x build
+
 echo 'Setup Environment begins'
 . build/envsetup.sh
 
