@@ -6,7 +6,7 @@ git clone https://github.com/imnathanzero/local_manifests_zzz -b crot .repo/loca
 
 # Sync the repositories
 echo "Sync begin"
-/opt/crave/resync.sh
+curl https://raw.githubusercontent.com/accupara/docker-images/refs/heads/master/aosp/common/resync.sh | bash
 
 echo 'Setup Environment begins'
 . build/envsetup.sh
