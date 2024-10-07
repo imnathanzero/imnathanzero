@@ -6,10 +6,21 @@ git clone https://github.com/imnathanzero/local_manifests_zzz -b zzz .repo/local
 
 # Sync the repositories
 echo "Sync begin"
-repo sync
+repo sync -j6
 
 wget https://raw.githubusercontent.com/306bobby-android/crDroid-build-signed-script/main/create-signed-env.sh
 chmod +x create-signed-env.sh
 ./create-signed-env.sh
 
-echo "Done Setup Repo, now lets get it done"
+echo "Done syncing Repo, now lets get it done"
+
+echo 'Setup Environment begins'
+. build/envsetup.sh
+
+# Build the ROM
+export USE_CCACHE=1
+export BUILD_USERNAME=nathannxx
+export BUILD_HOSTNAME=omkegams
+echo "BUILD STARTS NOW !!!"
+lunch lineage_RMX1941-userdebug
+mka bacon 
