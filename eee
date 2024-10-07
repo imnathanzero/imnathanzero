@@ -10,9 +10,9 @@ repo sync -j6
 
 wget https://raw.githubusercontent.com/306bobby-android/crDroid-build-signed-script/main/create-signed-env.sh
 chmod +x create-signed-env.sh
-./create-signed-env.sh
+bash create-signed-env.sh
 
-echo "Done syncing Repo, now lets get it done"
+
 
 echo 'Setup Environment begins'
 . build/envsetup.sh
