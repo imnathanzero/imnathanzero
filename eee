@@ -10,11 +10,8 @@ repo sync -j6
 
 wget https://raw.githubusercontent.com/306bobby-android/crDroid-build-signed-script/main/create-signed-env.sh
 chmod +x create-signed-env.sh
-bash create-signed-env.sh
+bash create-signed-env.sh && echo 'Setup Environment begins'
 
-
-
-echo 'Setup Environment begins'
 . build/envsetup.sh
 
 # Build the ROM
