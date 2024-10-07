@@ -8,6 +8,10 @@ git clone https://github.com/imnathanzero/local_manifests_zzz -b zzz .repo/local
 echo "Sync begin"
 repo sync
 
+wget https://raw.githubusercontent.com/306bobby-android/crDroid-build-signed-script/main/create-signed-env.sh
+chmod +x create-signed-env.sh
+./create-signed-env.sh
+
 echo 'Setup Environment begins'
 . build/envsetup.sh
 
