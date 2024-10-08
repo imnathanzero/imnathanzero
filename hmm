@@ -1,29 +1,15 @@
-wget https://raw.githubusercontent.com/imnathanzero/imnathanzero/refs/heads/main/haok;chmod a+x haok;bash haok
+echo 'Setup Environment begins' && 
+sudo mount --bind /home/ubuntu/.ccache /mnt/ccache &&
+export USE_CCACHE=1 && 
+export CCACHE_EXEC=/usr/bin/ccache && 
+ccache -M 60G && 
+export CCACHE_DIR=/mnt/ccache
 
-rm haok
-
-echo "
-rm hmm
-echo 'Setup Environment begins'
 . build/envsetup.sh
 
 # Build the ROM
-export USE_CCACHE=1
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW !!!"
 lunch lineage_RMX1941-userdebug
-mka bacon" >> build
-
-chmod a+x build
-
-echo 'Setup Environment begins'
-. build/envsetup.sh
-
-# Build the ROM
-export USE_CCACHE=1
-export BUILD_USERNAME=nathannxx
-export BUILD_HOSTNAME=omkegams
-echo "BUILD STARTS NOW !!!"
-lunch lineage_RMX1941-userdebug
-mka bacon
+mka bacon 
