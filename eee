@@ -6,11 +6,8 @@ git clone https://github.com/imnathanzero/local_manifests_zzz -b zzz .repo/local
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -j6
+curl -s https://raw.githubusercontent.com/accupara/docker-images/refs/heads/master/aosp/common/resync.sh | bash
 
-wget https://raw.githubusercontent.com/306bobby-android/crDroid-build-signed-script/main/create-signed-env.sh
-chmod +x create-signed-env.sh
-bash create-signed-env.sh && 
 echo 'Setup Environment begins' && 
 sudo mount --bind /home/username/.ccache /mnt/ccache &&
 export USE_CCACHE=1 && 
