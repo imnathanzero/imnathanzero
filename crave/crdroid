@@ -1,20 +1,19 @@
 # Initialize ROM and clone Device manifests
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/crdroidandroid/android.git -b 12.1 --git-lfs
-git clone https://github.com/imnathanzero/local_manifests_zzz -b crot .repo/local_manifests
+repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
+git clone https://github.com/imnathanzero/local_manifests_borgar -b borgar .repo/local_manifest
 
 # Sync the repositories
 echo "Sync begin"
-curl https://raw.githubusercontent.com/accupara/docker-images/refs/heads/master/aosp/common/resync.sh | bash
+/opt/crave/resync.sh  && 
 
 echo 'Setup Environment begins'
 . build/envsetup.sh
 
 # Build the ROM
-export USE_CCACHE=1
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
-echo "BUILD STARTS NOW !!!"
+echo "BUILD STARTS NOW"
 lunch lineage_RMX1941-userdebug
-brunch "RMX1941"
+m bacon
