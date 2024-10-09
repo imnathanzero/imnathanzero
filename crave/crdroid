@@ -15,5 +15,4 @@ echo 'Setup Environment begins'
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW"
-lunch lineage_RMX1941-userdebug
-m bacon
+brunch RMX1941
