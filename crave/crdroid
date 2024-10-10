@@ -1,5 +1,5 @@
 # Initialize ROM and clone Device manifests
-sudo apt-get install ccache -y
+sudo apt-get update -y;sudo apt-get -y install ccache
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
 repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
