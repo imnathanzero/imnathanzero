@@ -6,7 +6,8 @@ repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b crdroid device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
-git clone https://github.com/P-Salik/vendor_realme_RMX1941-ims --depth 1 -b lineage-20 vendor/realme/RMX1941-ims
+rm -rf vendor/realme/RMX1941-ims
+git clone https://github.com/imnathanzero/android_vendor_realme_RMX1941-ims --depth 1 -b tiramsu vendor/realme/RMX1941-ims
 git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git --depth 1 -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
 git clone https://github.com/P-Salik/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-gnu-7.5.git --depth 1 -b master prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-7.5
 git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-13.0 device/mediatek/sepolicy_vndr
