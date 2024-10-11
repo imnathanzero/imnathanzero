@@ -20,6 +20,8 @@ git clone https://github.com/P-Salik/android_prebuilts_gcc_linux-x86_aarch64_aar
 git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-13.0 device/mediatek/sepolicy_vndr
 rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
 git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master prebuilts/clang/host/linux-x86/clang-r450784d
+git clone https://gitlab.com/MindTheGapps/vendor_gapps.git --depth 1 -b tau vendor/gapps
+
 
 # Sync the repositories
 echo "Sync begin"
