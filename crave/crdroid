@@ -30,7 +30,6 @@ echo "Sync begin"
 
 # Build the ROM
 export WITH_GMS=true
-export GMS_MAKEFILE=gms.mk
 breakfast RMX1941
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
