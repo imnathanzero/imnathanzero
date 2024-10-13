@@ -24,7 +24,7 @@ git clone https://gitlab.com/techyminati/vendor_partner-gms.git --depth 1 -b tir
 
 # Sync the repositories
 echo "Sync begin"
-repo sync && 
+/opt/crave/resync.sh  && repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 . build/envsetup.sh
 
