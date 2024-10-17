@@ -21,6 +21,8 @@ rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
 git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master prebuilts/clang/host/linux-x86/clang-r450784d
 rm -rf hardware/interfaces
 git clone https://github.com/imnathanzero/android_hardware_interfaces.git --depth 1 -b 12 hardware/interfaces
+rm -rf vendor/qcom/opensource/vibrator
+git clone https://github.com/imnathanzero/android_vendor_qcom_opensource_vibrator.git --depth 1 -b 12 vendor/qcom/opensource/vibrator
 
 
 # Sync the repositories
