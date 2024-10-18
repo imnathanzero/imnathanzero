@@ -1,0 +1,19 @@
+echo 'Initialize ROM and Device manifests'
+rm -rf .repo/local_manifests &&
+repo init -u https://github.com/baikalos/android.git -b 13.0 --git-lfs
+rm -rf device/realme/RMX1941
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b crdroid device/realme/RMX1941
+git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
+git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
+git clone https://github.com/imnathanzero/android_vendor_realme_RMX1941-ims --depth 1 -b tiramsu vendor/realme/RMX1941-ims
+git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git --depth 1 -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
+git clone https://github.com/P-Salik/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-gnu-7.5.git --depth 1 -b master prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-7.5
+git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-13.0 device/mediatek/sepolicy_vndr
+rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
+git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master prebuilts/clang/host/linux-x86/clang-r450784d
+git clone https://gitlab.com/techyminati/vendor_partner-gms.git --depth 1 -b tiramisu vendor/partner_gms
+git clone https://github.com/baikalos/android_vendor_baikalos.git --depth 1 -b 13.0 vendor/lineage
+git clone https://android.googlesource.com/platform/prebuilts/build-tools --depth 1 -b android-13.0.0_r83 prebuilts/build-tools
+rm -rf frameworks/base
+git clone https://github.com/baikalos/android_frameworks_base --depth 1 -b 13.0 frameworks/base
+git clone https://github.com/baikalos/android_hardware_google_pixel --depth 1 -b lineage-20.0 hardware/google/pixel
