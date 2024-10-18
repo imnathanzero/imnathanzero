@@ -25,11 +25,12 @@ git clone https://github.com/baikalos/android_vendor_baikalos.git --depth 1 -b 1
 git clone https://android.googlesource.com/platform/prebuilts/build-tools --depth 1 -b android-13.0.0_r83 prebuilts/build-tools
 rm -rf frameworks/base
 git clone https://github.com/baikalos/android_frameworks_base --depth 1 -b 13.0 frameworks/base
+git clone https://github.com/baikalos/android_hardware_google_pixel --depth 1 -b lineage-20.0 hardware/google/pixel
 
 
 # Sync the repositories
 echo "Sync begin"
-/opt/crave/resync.sh  && repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+/opt/crave/resync.sh
 
 . build/envsetup.sh
 
