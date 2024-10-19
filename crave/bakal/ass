@@ -17,3 +17,4 @@ git clone https://android.googlesource.com/platform/prebuilts/build-tools --dept
 rm -rf frameworks/base
 git clone https://github.com/baikalos/android_frameworks_base --depth 1 -b 13.0 frameworks/base
 rm -rf device/google/cuttlefish
+rm -rf packages/apps/FaceUnlockService
