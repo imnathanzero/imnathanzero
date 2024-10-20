@@ -12,7 +12,9 @@ git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git -
 rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
 git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master prebuilts/clang/host/linux-x86/clang-r450784d
 git clone https://gitlab.com/techyminati/vendor_partner-gms.git --depth 1 -b tiramisu vendor/partner_gms
+rm -rf vendor/lineage
 git clone https://github.com/baikalos/android_vendor_baikalos.git --depth 1 -b 13.0 vendor/lineage
+rm -rf prebuilts/build-tools
 git clone https://android.googlesource.com/platform/prebuilts/build-tools --depth 1 -b android-13.0.0_r83 prebuilts/build-tools
 rm -rf frameworks/base
 git clone https://github.com/imnathanzero/android_frameworks_base.git --depth 1 -b 13.0 frameworks/base
