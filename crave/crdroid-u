@@ -9,12 +9,13 @@ sudo apt install bc bison build-essential curl flex g++-multilib gcc-multilib gi
 clear
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
+repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs
 rm -rf device/realme/RMX1941
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b crdroid-14-ex device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
-git clone https://github.com/imnathanzero/android_vendor_realme_RMX1941-ims --depth 1 -b tiramsu vendor/realme/RMX1941-ims
+rm -rf vendor/realme/RMX1941-ims
+git clone https://github.com/imnathanzero/vendor_realme_RMX2020-ims --depth 1 -b thirteen-rmui1 vendor/realme/RMX1941-ims
 git clone https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r530567 --depth 1 -b 14.0 prebuilts/clang/host/linux-x86/clang-latest
 git clone https://github.com/P-Salik/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-gnu-7.5.git --depth 1 -b master prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-7.5
 git clone https://github.com/LineageOS/android_device_mediatek_sepolicy_vndr --depth 1 -b lineage-21 device/mediatek/sepolicy_vndr
