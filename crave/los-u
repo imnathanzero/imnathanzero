@@ -10,6 +10,7 @@ clear
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
 repo init -u https://github.com/LineageOS/android.git -b lineage-21.0 --git-lfs
+rm -rf device/realme/RMX1941
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b lineage device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
@@ -25,9 +26,12 @@ git clone https://www.opencode.net/clhexftw/android_prebuilts_clang_kernel_linux
 echo "Sync begin"
 /opt/crave/resync.sh  && repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+echo "Syncing Done"
+
 . build/envsetup.sh
 
 # Build the ROM
+echo "Now Lets Compile and Build It"
 breakfast RMX1941
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
