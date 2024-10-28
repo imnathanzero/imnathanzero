@@ -9,7 +9,7 @@ sudo apt install bc bison build-essential curl flex g++-multilib gcc-multilib gi
 clear
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/SuperiorExtended/manifest.git -b thirteen
+repo init -u https://github.com/SuperiorOS/manifest.git -b thirteen
 rm -rf device/realme/RMX1941
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b supri device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
