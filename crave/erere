@@ -9,21 +9,10 @@ sudo apt install bc bison build-essential curl flex g++-multilib gcc-multilib gi
 clear
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/Project-Awaken/android_manifest -b triton --git-lfs
-git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b awaken device/realme/RMX1941
-git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
-git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
-git clone https://github.com/imnathanzero/android_vendor_realme_RMX1941-ims --depth 1 -b tiramsu vendor/realme/RMX1941-ims
-git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git --depth 1 -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
-git clone https://github.com/P-Salik/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-gnu-7.5.git --depth 1 -b master prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-7.5
-git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-13.0 device/mediatek/sepolicy_vndr
-rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
-git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master prebuilts/clang/host/linux-x86/clang-r450784d
-rm -rf hardware/interfaces
-git clone https://github.com/imnathanzero/android_hardware_interfaces.git --depth 1 -b 12 hardware/interfaces
-rm -rf vendor/qcom/opensource/vibrator
-git clone https://github.com/imnathanzero/android_vendor_qcom_opensource_vibrator.git --depth 1 -b 12 vendor/qcom/opensource/vibrator
-
+repo init -u https://github.com/ResurrectionRemix-Revived/manifest.git -b Q --git-lfs
+git clone --depth=1 https://github.com/imnathanzero/device_realme_RMX1941.git -b 10-rr device/realme/RMX1941
+git clone --depth=1 https://github.com/P-Salik/android_kernel_realme_RMX1941.git -b Q kernel/realme/RMX1941
+git clone --depth=1 https://github.com/imnathanzero/vendor_realme_RMX1941.git -b que vendor/realme/RMX1941
 
 # Sync the repositories
 echo "Sync begin"
@@ -34,6 +23,7 @@ echo "Sync begin"
 # Build the ROM
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
+export GAPPS=true
 echo "BUILD STARTS NOW"
-lunch awaken_RMX1941-userdebug
-make bacon -j$(nproc --all)
+lunch rr_RMX1941-userdebug
+m bacon
