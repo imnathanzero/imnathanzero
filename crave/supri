@@ -30,7 +30,6 @@ echo "Sync begin"
 . build/envsetup.sh
 
 # Build the ROM
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW"
