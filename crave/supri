@@ -4,7 +4,7 @@ rm -rf .repo/local_manifests &&
 repo init -u https://github.com/SuperiorOS/manifest.git -b thirteen
 rm -rf device/realme/RMX1941
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b supri device/realme/RMX1941
-git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
+git clone https://github.com/imnathanzero/kernel_realme_RMX1941 --depth 1 -b cassia kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
 rm -rf vendor/realme/RMX1941-ims
 git clone https://github.com/IdkAnythin07/vendor_realme_RMX2020-ims --depth 1 -b thirteen-rmui1 vendor/realme/RMX1941-ims
@@ -22,6 +22,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 . build/envsetup.sh
 
 # Build the ROM
+export KBUILD_HOST=-cassia
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW"
