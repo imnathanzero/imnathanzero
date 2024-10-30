@@ -17,12 +17,14 @@ git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master pr
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+curl -s https://raw.githubusercontent.com/accupara/docker-images/refs/heads/master/aosp/common/resync.sh | bash
 
 . build/envsetup.sh
 
 # Build the ROM
-export KBUILD_HOST=-cassia
+export KBUILD_BUILD_USER=ok
+export KBUILD_BUILD_HOST=root
+export LOCALVERSION="-endfiewd"
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW"
