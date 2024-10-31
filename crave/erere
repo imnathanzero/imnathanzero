@@ -2,12 +2,12 @@ echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
 repo init -u https://github.com/ResurrectionRemix-Revived/manifest.git -b Q --git-lfs
 git clone --depth=1 https://github.com/imnathanzero/device_realme_RMX1941.git -b 10-rr device/realme/RMX1941
-git clone --depth=1 https://github.com/P-Salik/android_kernel_realme_RMX1941.git -b Q kernel/realme/RMX1941
+git clone --depth=1 https://github.com/imnathanzero/kernel_realme_RMX1941.git -b cassia kernel/realme/RMX1941
 git clone --depth=1 https://github.com/imnathanzero/vendor_realme_RMX1941.git -b que vendor/realme/RMX1941
 
 # Sync the repositories
 echo "Sync begin"
-curl -s https://raw.githubusercontent.com/accupara/docker-images/refs/heads/master/aosp/common/resync.sh | bash
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 . build/envsetup.sh
 
