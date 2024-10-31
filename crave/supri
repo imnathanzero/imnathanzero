@@ -27,6 +27,7 @@ export KBUILD_BUILD_HOST=root
 export LOCALVERSION="-endfiewd"
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
+export BUILD_WITH_GAPPS=true
 echo "BUILD STARTS NOW"
 lunch superior_RMX1941-userdebug
 m bacon -j$(nproc --all)
