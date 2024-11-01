@@ -4,8 +4,6 @@ repo init -u https://github.com/ResurrectionRemix-Revived/manifest.git -b Q --gi
 git clone --depth=1 https://github.com/imnathanzero/device_realme_RMX1941.git -b 10-rr device/realme/RMX1941
 git clone --depth=1 https://github.com/imnathanzero/kernel_realme_RMX1941.git -b cassia kernel/realme/RMX1941
 git clone --depth=1 https://github.com/imnathanzero/vendor_realme_RMX1941.git -b que vendor/realme/RMX1941
-rm -rf prebuilts/clang/host/linux-x86
-git clone --depth=1 https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/ -b android-10.0.0_r47 prebuilts/clang/host/linux-x86 
 
 # Sync the repositories
 echo "Sync begin"
