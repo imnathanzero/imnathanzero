@@ -14,12 +14,11 @@ git clone https://gitlab.com/techyminati/vendor_partner-gms.git --depth 1 -b tir
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
+bash resync.sh
 
 . build/envsetup.sh
 
 # Build the ROM
-breakfast RMX1941
 export BUILD_USERNAME=nathannxx
 export BUILD_HOSTNAME=omkegams
 echo "BUILD STARTS NOW"
