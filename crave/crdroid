@@ -2,7 +2,7 @@ echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
 repo init -u https://github.com/hentaiOS/platform_manifest.git -b thirteen --git-lfs
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b hentong-13 device/realme/RMX1941
-git clone https://github.com/imnathanzero/kernel_realme_RMX1941 --depth 1 -b cassia kernel/realme/RMX1941
+git clone https://github.com/Frostleaft07/kernel_realme_RMX1941 --depth 1 -b cassia kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
 git clone https://github.com/IdkAnythin07/vendor_realme_RMX2020-ims --depth 1 -b thirteen-rmui1 vendor/realme/RMX1941-ims
 git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git --depth 1 -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
