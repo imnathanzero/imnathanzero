@@ -1,7 +1,7 @@
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
 repo init -u https://github.com/NusantaraProject-ROM/android_manifest -b 10
-git clone --depth=1 https://github.com/imnathanzero/device_realme_RMX1941.git -b 10-rr device/realme/RMX1941
+git clone --depth=1 https://github.com/imnathanzero/device_realme_RMX1941-1.git -b 10 device/realme/RMX1941
 git clone --depth=1 https://github.com/Frostleaft07/kernel_realme_RMX1941.git -b cassia kernel/realme/RMX1941
 git clone --depth=1 https://github.com/imnathanzero/vendor_realme_RMX1941.git -b que vendor/realme/RMX1941
 
