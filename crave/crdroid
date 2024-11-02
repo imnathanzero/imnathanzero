@@ -13,7 +13,7 @@ git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master pr
 
 # Sync the repositories
 echo "Sync begin"
-bash resync.sh
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 . build/envsetup.sh
 
