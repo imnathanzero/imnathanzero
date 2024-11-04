@@ -17,6 +17,8 @@ git clone --depth=1 https://github.com/imnathanzero/vendor_realme_RMX1941.git -b
 echo "Sync begin"
 /opt/crave/resync.sh
 
+rm -rf packages/apps/FMRadio
+
 . build/envsetup.sh
 
 # Build the ROM
