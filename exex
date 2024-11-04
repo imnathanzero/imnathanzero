@@ -9,7 +9,7 @@ sudo apt install bc bison build-essential curl flex g++-multilib gcc-multilib gi
 clear
 rm -rf .repo/local_manifests &&
 repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q
-git clone --depth=1 https://github.com/imnathanzero/device_realme_RMX1941.git -b ten device/realme/RMX1941
+git clone --depth=1 https://github.com/imnathanzero/device_realme_RMX1941.git -b ten-rr device/realme/RMX1941
 git clone --depth=1 https://github.com/Frostleaft07/kernel_realme_RMX1941.git -b cassia kernel/realme/RMX1941
 git clone --depth=1 https://github.com/imnathanzero/vendor_realme_RMX1941.git -b que vendor/realme/RMX1941
 
