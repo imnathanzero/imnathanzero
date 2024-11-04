@@ -1,7 +1,7 @@
 # Initialize ROM and clone Device manifests
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
+repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b crdroid-13 device/realme/RMX1941
 git clone https://github.com/Frostleaft07/kernel_realme_RMX1941 --depth 1 -b cassia kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
@@ -12,6 +12,10 @@ git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git -
 rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
 git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master prebuilts/clang/host/linux-x86/clang-r450784d
 
+echo "mv device/realme/RMX1941/overlay/frameworks/base/core/res/res/values/config.xml device/realme/RMX1941/overlay/frameworks/base/core/res/res/values/cr_config.xml"
+mv device/realme/RMX1941/overlay/frameworks/base/core/res/res/values/config.xml device/realme/RMX1941/overlay/frameworks/base/core/res/res/values/cr_config.xml
+echo "mv device/realme/RMX1941/overlay/frameworks/base/packages/SystemUI/res/values/config.xml device/realme/RMX1941/overlay/frameworks/base/packages/SystemUI/res/values/cr_config.xml"
+mv device/realme/RMX1941/overlay/frameworks/base/packages/SystemUI/res/values/config.xml device/realme/RMX1941/overlay/frameworks/base/packages/SystemUI/res/values/cr_config.xml
 
 # Sync the repositories
 echo "Sync begin"
