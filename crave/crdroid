@@ -1,10 +1,10 @@
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/hentaiOS/platform_manifest.git -b thirteen --git-lfs
-git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b hentong-13 device/realme/RMX1941
+repo init -u https://github.com/crdroidandroid/android.git -b 12.1 --git-lfs
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b crdroid-12.1 device/realme/RMX1941
 git clone https://github.com/Frostleaft07/kernel_realme_RMX1941 --depth 1 -b cassia kernel/realme/RMX1941
-git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
-git clone https://github.com/IdkAnythin07/vendor_realme_RMX2020-ims --depth 1 -b thirteen-rmui1 vendor/realme/RMX1941-ims
+git clone https://github.com/imnathanzero/android_vendor_realme_RMX1941 --depth 1 -b twelve vendor/realme/RMX1941
+git clone https://github.com/imnathanzero/vendor_mtk-ims --depth 1 -b 12 vendor/mtk-ims
 git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git --depth 1 -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
 git clone https://github.com/P-Salik/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-gnu-7.5.git --depth 1 -b master prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-7.5
 git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-14.0 device/mediatek/sepolicy_vndr
