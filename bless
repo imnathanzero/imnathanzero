@@ -24,4 +24,4 @@ export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=usersuper
 export BLISS_BUILD_VARIANT=gapps
 echo "BUILD STARTS NOW"
-blissify RMX1941
+blissify -g RMX1941
