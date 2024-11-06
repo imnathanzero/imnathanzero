@@ -13,6 +13,9 @@ git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git -
 echo "Sync begin"
 repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
 
+rm -rf hardware/lineage/interfaces
+git clone https://github.com/imnathanzero/android_hardware_lineage_interfaces.git --depth 1 -b 13.0 hardware/lineage/interfaces
+
 . build/envsetup.sh
 
 # Build the ROM
