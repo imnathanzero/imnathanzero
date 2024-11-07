@@ -19,5 +19,4 @@ repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc 
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=usersuper
 echo "BUILD STARTS NOW"
-lunch arrow_RMX1941-userdebug
-m bacon
+brunch RMX1941
