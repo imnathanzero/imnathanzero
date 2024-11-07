@@ -1,7 +1,8 @@
 # Initialize ROM and clone Device manifests
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-
+repo init -u https://github.com/LineageOS/android.git -b cm-14.1
+git clone --depth=1 https://github.com/yashraj22/android_device_oppo_A37f.git -b cm-14.1 device/yu/lettuce 
 
 # Sync the repositories
 echo "Sync begin"
@@ -13,3 +14,4 @@ repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc 
 export BUILD_USERNAME=Discussion
 export BUILD_HOSTNAME=Verse
 echo "BUILD STARTS NOW" 
+brunch lettuce
