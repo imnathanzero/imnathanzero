@@ -1,7 +1,11 @@
 # Initialize ROM and clone Device manifests
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/LineageOS/android.git -b cm-14.1
+repo init -u https://github.com/LineageOS/android.git -b lineage-15.1
+git clone --depth=1 https://github.com/yashraj22/android_device_oppo_A37f.git -b lineage-15.1 device/oppo/A37f
+git clone --depth=1 https://github.com/yashraj22/android_device_cyanogen_msm8916-common.git -b lineage-15.1 device/cyanogen/msm6916-common
+git clone --depth=1 https://github.com/yashraj22/kernel_oppo_A37f.git -b lineage-17.1 kernel/oppo/A37f
+git clone --depth=1 https://github.com/yashraj22/vendor_oppo_A37f.git -b lineage-15.1 vendor/oppo/A37f
 
 # Sync the repositories
 echo "Sync begin"
@@ -13,4 +17,4 @@ repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc 
 export BUILD_USERNAME=Discussion
 export BUILD_HOSTNAME=Verse
 echo "BUILD STARTS NOW" 
-brunch A37
+brunch A37f
