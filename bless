@@ -1,9 +1,8 @@
 # Initialize ROM and clone Device manifests
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/crdroidandroid/android.git -b 12.1 --git-lfs
-rm -rf device/realme/RMX1941
-git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b crdroid-12 device/realme/RMX1941
+repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.1
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b arrow-12 device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/anoosragh69/android_vendor_realme_RMX1941.git --depth 1 -b twelve-L vendor/realme/RMX1941
 git clone https://github.com/imnathanzero/vendor_mtk-ims --depth 1 -b 12 vendor/mtk-ims
@@ -14,13 +13,11 @@ git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git -
 echo "Sync begin"
 repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
 
-rm -rf hardware/lineage/interfaces
-git clone https://github.com/imnathanzero/android_hardware_lineage_interfaces.git --depth 1 -b 13.0 hardware/lineage/interfaces
-
 . build/envsetup.sh
 
 # Build the ROM
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=usersuper
 echo "BUILD STARTS NOW"
-brunch RMX1941
+lunch arrow_RMX1941-userdebug
+m bacon
