@@ -1,0 +1,15 @@
+# Initialize ROM and clone Device manifests
+echo 'Initialize ROM and Device manifests'
+rm -rf .repo/local_manifests &&
+
+
+# Sync the repositories
+echo "Sync begin"
+repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
+
+. build/envsetup.sh
+
+# Build the ROM
+export BUILD_USERNAME=Discussion
+export BUILD_HOSTNAME=Verse
+echo "BUILD STARTS NOW" 
