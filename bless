@@ -1,8 +1,8 @@
 # Initialize ROM and clone Device manifests
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/xdroid-oss/xd_manifest -b twelve
-git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b xd-12 device/realme/RMX1941
+repo init -u https://github.com/AOSPA/manifest -b sapphire
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b aospa-12 device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/anoosragh69/android_vendor_realme_RMX1941.git --depth 1 -b twelve-L vendor/realme/RMX1941
 git clone https://github.com/imnathanzero/vendor_mtk-ims --depth 1 -b 12 vendor/mtk-ims
@@ -19,5 +19,4 @@ repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc 
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=usersuper
 echo "BUILD STARTS NOW"
-lunch xdroid_RMX1941-userdebug
-make xd -j$(nproc --all)
+./rom-build.sh RMX1941
