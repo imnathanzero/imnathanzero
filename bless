@@ -1,8 +1,8 @@
 # Initialize ROM and clone Device manifests
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/AOSPA/manifest -b sapphire
-git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b aospa-12 device/realme/RMX1941
+repo init -u https://github.com/Spark-Rom/manifest -b spark
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b suprax-12 device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/anoosragh69/android_vendor_realme_RMX1941.git --depth 1 -b twelve-L vendor/realme/RMX1941
 git clone https://github.com/imnathanzero/vendor_mtk-ims --depth 1 -b 12 vendor/mtk-ims
@@ -13,10 +13,11 @@ git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git -
 echo "Sync begin"
 repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
 
-. build/envsetup.sh
+. build/env*
 
 # Build the ROM
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=usersuper
 echo "BUILD STARTS NOW"
-./rom-build.sh RMX1941
+lunch spark_RMX1941-userdebug
+mka bacon -j$(nproc --all)
