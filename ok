@@ -1,7 +1,7 @@
 # Initialize ROM and clone Device manifests
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/Havoc-OS-Revived/android_manifest.git -b eleven --git-lfs
+repo init -u https://github.com/Corvus-AOSP/android_manifest.git -b 11
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b havoc-11 device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/imnathanzero/avendor_realme_RMX1941.git --depth 1 -b roti vendor/realme/RMX1941
@@ -19,4 +19,7 @@ repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc 
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=usersuper
 echo "BUILD STARTS NOW"
-lunch havoc_RMX1941-userdebug
+nano device/realme/RMX1941/AndroidProducts.mk \
+mv device/realme/RMX1941/havoc_RMX1941.mk device/realme/RMX1941/corvus_RMX1941.mk \
+nano device/realme/RMX1941/corvus_RMX1941.mk
+lunch corvus_RMX1941-userdebug
