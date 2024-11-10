@@ -1,12 +1,12 @@
 # Initialize ROM and clone Device manifests
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/Corvus-AOSP/android_manifest.git -b 11
-git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b havoc-11 device/realme/RMX1941
+repo init -u https://github.com/ProtonAOSP/android_manifest -b sc-qpr3
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b proton-12 device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
-git clone https://github.com/imnathanzero/avendor_realme_RMX1941.git --depth 1 -b roti vendor/realme/RMX1941
-# git clone https://github.com/imnathanzero/vendor_mtk-ims --depth 1 -b 12 vendor/mtk-ims
-# git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-12.1 device/mediatek/sepolicy_vndr
+git clone https://github.com/anoosragh69/android_vendor_realme_RMX1941.git --depth 1 -b twelve-L vendor/realme/RMX1941
+git clone https://github.com/imnathanzero/vendor_mtk-ims --depth 1 -b 12 vendor/mtk-ims
+git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-12.1 device/mediatek/sepolicy_vndr
 
 
 # Sync the repositories
@@ -19,7 +19,6 @@ repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc 
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=usersuper
 echo "BUILD STARTS NOW"
-nano device/realme/RMX1941/AndroidProducts.mk \
-mv device/realme/RMX1941/havoc_RMX1941.mk device/realme/RMX1941/corvus_RMX1941.mk \
-nano device/realme/RMX1941/corvus_RMX1941.mk
-lunch corvus_RMX1941-userdebug
+nano device/realme/RMX1941/AndroidProducts.mk;mv device/realme/RMX1941/arrow_RMX1941.mk device/realme/RMX1941/aosp_RMX1941.mk
+nano device/realme/RMX1941/aosp_RMX1941.mk
+lunch aosp_RMX1941-userdebug
