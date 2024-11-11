@@ -1,7 +1,7 @@
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs
-git clone https://github.com/IdkAnythin07/android_device_realme_RMX1941 --depth 1 -b CrFuck device/realme/RMX1941
+repo init -u https://github.com/RisingTechOSS/android -b fourteen --git-lfs
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b udc device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
 git clone https://github.com/imnathanzero/vendor_realme_RMX2020-ims --depth 1 -b thirteen-rmui1 vendor/realme/RMX1941-ims
@@ -20,9 +20,7 @@ echo "Syncing Done"
 . build/envsetup.sh
 
 # Build the ROM
-echo "Now Lets Compile and Build It"
-breakfast RMX1941
-export BUILD_USERNAME=nathannxx
-export BUILD_HOSTNAME=omkegams
+export BUILD_USERNAME=nathann
+export BUILD_HOSTNAME=kintil-kuda
 echo "BUILD STARTS NOW"
-brunch RMX1941
+riseup RMX1941 userdebug
