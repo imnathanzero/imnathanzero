@@ -1,7 +1,7 @@
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init --depth=1 --no-repo-verify -u https://github.com/AfterLifePrjkt13/android_manifest.git -b LTS -g default,-mips,-darwin,-notdefault
-git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b af device/realme/RMX1941
+repo init -u https://github.com/ArrowOS-Extended/android_manifest.git -b arrow-13.1 --git-lfs
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b arrow-13 device/realme/RMX1941
 git clone https://github.com/imnathanzero/kernel_realme_RMX1941 --depth 1 -b cassia kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
 git clone https://github.com/imnathanzero/vendor_realme_RMX2020-ims --depth 1 -b thirteen-rmui1 vendor/realme/RMX1941-ims
@@ -15,7 +15,8 @@ git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master pr
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+nano .repo/manifests/snippets/arrow.xml
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 . build/envsetup.sh
 
@@ -23,5 +24,5 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=supeRuser
 echo "BUILD STARTS NOW"
-lunch afterlife_RMX1941-userdebug
-m afterlife -j$(nproc --all)
+lunch arrow_RMX1941-userdebug
+m bacon
