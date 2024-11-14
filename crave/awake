@@ -15,10 +15,10 @@ git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master pr
 
 # Sync the repositories
 echo "Sync begin"
-nano .repo/manifests/snippets/afterlife.xml;
-nano .repo/manifests/snippets/arrow.xml;
+nano .repo/manifests/snippets/awaken.xml;
 nano .repo/manifests/snippets/lineage.xml
- repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
+
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 source build/envsetup.sh
 
