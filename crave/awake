@@ -3,8 +3,8 @@ rm -rf .repo/local_manifests &&
 repo init -u https://github.com/Project-Awaken/android_manifest -b triton --git-lfs
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b awaken-13 device/realme/RMX1941
 git clone https://github.com/imnathanzero/kernel_realme_RMX1941 --depth 1 -b cassia kernel/realme/RMX1941
-git clone https://github.com/imnathanzero/vendor_realme_RMX2020-ims.git --depth 1 -b thirteen-rmui1 vendor/realme/RMX1941
-git clone https://github.com/imnathanzero/android_vendor_realme_RMX2020-ims.git --depth 1 -b tiramsu vendor/realme/RMX1941-ims
+git clone https://github.com/imnathanzero/vendor_realme_RMX2020-ims.git --depth 1 -b thirteen-rmui1 vendor/realme/RMX1941-ims
+git clone https://github.com/imnathanzero/android_vendor_realme_RMX1941.git --depth 1 -b tiramsu vendor/realme/RMX1941
 rm -rf prebuilts/clang/host/linux-x86/clang-r353983c
 git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git --depth 1 -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
 rm -rf prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-7.5
@@ -15,9 +15,6 @@ git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master pr
 
 # Sync the repositories
 echo "Sync begin"
-nano .repo/manifests/snippets/awaken.xml;
-nano .repo/manifests/snippets/lineage.xml
-
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 source build/envsetup.sh
