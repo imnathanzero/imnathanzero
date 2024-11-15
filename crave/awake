@@ -1,7 +1,8 @@
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/Project-Awaken/android_manifest -b triton --git-lfs
 git clone https://github.com/imnathanzero/RMX1941_local_manifests.git -b awaken-13 .repo/local_manifests
+repo init -u https://github.com/Project-Awaken/android_manifest -b triton --git-lfs
+
 # Sync the repositories
 echo "Sync begin"
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
