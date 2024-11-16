@@ -1,11 +1,11 @@
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-git clone https://github.com/imnathanzero/RMX1941_local_manifests.git -b xd-13 .repo/local_manifests
-repo init -u https://github.com/xdroid-oss/xd_manifest -b thirteen
+git clone https://github.com/imnathanzero/RMX1941_local_manifests.git -b yaap-13 .repo/local_manifests
+repo init -u https://github.com/yaap/manifest.git -b thirteen
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
+repo sync -j8 --no-tags --no-clone-bundle --current-branch
 
 . build/envsetup.sh
 
@@ -13,5 +13,5 @@ repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=supeRuser
 echo "BUILD STARTS NOW"
-lunch xdroid_RMX1941-userdebug
-make xd -j7
+lunch yaap_RMX1941-userdebug
+m yaap
