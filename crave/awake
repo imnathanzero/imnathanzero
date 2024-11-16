@@ -1,17 +1,17 @@
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-git clone https://github.com/imnathanzero/RMX1941_local_manifests.git -b awaken-13 .repo/local_manifests
-repo init -u https://github.com/Project-Awaken/android_manifest -b triton --git-lfs
+git clone https://github.com/imnathanzero/RMX1941_local_manifests.git -b xd-13 .repo/local_manifests
+repo init -u https://github.com/xdroid-oss/xd_manifest -b thirteen
 
 # Sync the repositories
 echo "Sync begin"
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
+repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
 
-source build/envsetup.sh
+. build/envsetup.sh
 
 # Build the ROM
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=supeRuser
 echo "BUILD STARTS NOW"
-lunch awaken_RMX1941-userdebug
-make bacon -j7
+lunch xdroid_RMX1941-userdebug
+make xd -j7
