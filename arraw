@@ -1,7 +1,7 @@
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-git clone https://github.com/imnathanzero/RMX1941_local_manifests.git -b yaap-13 .repo/local_manifests
-repo init -u https://github.com/yaap/manifest.git -b thirteen
+git clone -q https://github.com/imnathanzero/RMX1941_local_manifests.git -b arrow-13 .repo/local_manifests
+repo init -u https://github.com/ArrowOS-T/android_manifest.git -b arrow-13.1
 
 # Sync the repositories
 echo "Sync begin"
@@ -13,5 +13,5 @@ repo sync -j8 --no-tags --no-clone-bundle --current-branch
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=supeRuser
 echo "BUILD STARTS NOW"
-lunch yaap_RMX1941-userdebug
-m yaap
+lunch arrow_RMX1941-userdebug
+m bacon
