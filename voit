@@ -1,0 +1,17 @@
+echo 'Initialize ROM and Device manifests'
+rm -rf .repo/local_manifests &&
+git clone -q https://github.com/imnathanzero/RMX1941_local_manifests.git -b void-13 .repo/local_manifests
+repo init -u https://github.com/VoidUI-Tiramisu/manifest -b aosp-13
+
+# Sync the repositories
+echo "Sync begin"
+repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
+
+. build/envsetup.sh
+
+# Build the ROM
+export BUILD_USERNAME=nathan
+export BUILD_HOSTNAME=supeRuser
+echo "BUILD STARTS NOW"
+lunch aosp_RMX1941-userdebug
+mka bacon -j7
