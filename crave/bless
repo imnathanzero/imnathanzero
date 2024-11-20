@@ -1,24 +1,23 @@
 echo 'Initialize ROM and Device manifests'
 rm -rf .repo/local_manifests &&
-repo init -u https://github.com/ArrowOS-Extended/android_manifest.git -b arrow-13.1 --git-lfs
-git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b arrow-13 device/realme/RMX1941
-# git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
+repo init -u https://github.com/Spark-Rom/manifest -b pyro-next
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b spark-13 device/realme/RMX1941
 git clone https://github.com/imnathanzero/kernel_realme_RMX1941 --depth 1 -b cassia kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
 git clone https://github.com/imnathanzero/vendor_realme_RMX2020-ims --depth 1 -b thirteen-rmui1 vendor/realme/RMX1941-ims
 git clone https://github.com/P-Salik/android_prebuilts_clang_host_linux-x86_clang-5484270.git --depth 1 -b 9.0.3 prebuilts/clang/host/linux-x86/clang-r353983c
 git clone https://github.com/P-Salik/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-gnu-7.5.git --depth 1 -b master prebuilts/gcc/linux-x86/aarch64/aarch64-linux-gnu-7.5
-# git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr --depth 1 -b arrow-13.0 device/mediatek/sepolicy_vndr
+git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr --depth 1 -b arrow-13.0 device/mediatek/sepolicy_vndr
 
 # Sync the repositories
 echo "Sync begin"
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
-. build/envsetup.sh
+. build/env*
 
 # Build the ROM
 export BUILD_USERNAME=nathann
 export BUILD_HOSTNAME=kintil-kuda
 echo "BUILD STARTS NOW"
-lunch arrow_RMX1941-userdebug
-m bacon
+lunch spark_RMX1941-userdebug
+mka bacon -j$(nproc --all)
