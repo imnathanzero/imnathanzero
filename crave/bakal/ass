@@ -7,9 +7,10 @@ git clone https://github.com/P-Salik/android_prebuilts_gcc_linux-x86_aarch64_aar
 git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git --depth 1 -b arrow-13.0 device/mediatek/sepolicy_vndr
 git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master prebuilts/clang/host/linux-x86/clang-r450784d
 
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+ . build/envsetup.sh
+
 export BUILD_USERNAME=nathan
 export BUILD_HOSTNAME=amsu-kowe
 echo "BUILD STARTS NOW"
-lunch lineage_RMX1941-userdebug
-m bacon
+lunch exthm_RMX1941-userdebug
+make reimu -j$(nproc --all)
