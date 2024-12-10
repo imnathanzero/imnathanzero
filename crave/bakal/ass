@@ -1,4 +1,4 @@
-git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b ?? device/realme/RMX1941
+git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b alpha-13 device/realme/RMX1941
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
 git clone https://github.com/imnathanzero/vendor_mtk-ims --depth 1 -b 12 vendor/mtk-ims
@@ -9,4 +9,6 @@ git clone https://github.com/ArrowOS/android_device_mediatek_sepolicy_vndr.git -
 rm -rf prebuilts/clang/host/linux-x86/clang-r450784d
 git clone https://gitlab.com/tejas101k/clang-r450784d.git --depth 1 -b master prebuilts/clang/host/linux-x86/clang-r450784d
 
- . build/envsetup.sh
+ . build/env*
+
+lunch lineage_RMX1941-eng
