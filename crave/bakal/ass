@@ -1,4 +1,7 @@
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 --depth 1 -b crdroid-13 device/realme/RMX1941
+
+cd device/realme/RMX1941;git remote add mY https://github.com/imnathanzero/android_device_realme_RMX1941.git;git fetch mY;cd ~/arraw
+
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 --depth 1 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 --depth 1 -b tiramsu vendor/realme/RMX1941
 git clone https://github.com/imnathanzero/vendor_mtk-ims --depth 1 -b 12 vendor/mtk-ims
