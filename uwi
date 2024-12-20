@@ -3,7 +3,7 @@ repo sync -j7
 
 git clone https://github.com/imnathanzero/android_device_realme_RMX1941 -b u-wip device/realme/RMX1941
 
-cd device/realme/RMX1941;git remote add mY https://github.com/imnathanzero/android_device_realme_RMX1941.git;git fetch mY;cd ~/arraw
+cd device/realme/RMX1941;git remote add mY https://github.com/imnathanzero/android_device_realme_RMX1941.git;git fetch mY;cd ~/uwi
 
 git clone https://github.com/P-Salik/android_kernel_realme_RMX1941 -b Q-rebase kernel/realme/RMX1941
 git clone https://github.com/imnathanzero/android_vendor_realme_RMX1941 -b u vendor/realme/RMX1941
